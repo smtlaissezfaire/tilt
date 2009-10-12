@@ -142,7 +142,7 @@ module Tilt
       @code
     end
   end
-  register 'str', StringTemplate
+  register :str, StringTemplate
 
   # ERB template implementation. See:
   # http://www.ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html
@@ -208,7 +208,7 @@ module Tilt
       options.merge(:filename => eval_file, :line => line)
     end
   end
-  register 'haml', HamlTemplate
+  register :haml, HamlTemplate
 
   # Sass template implementation. See:
   # http://haml.hamptoncatlin.com/
@@ -232,7 +232,7 @@ module Tilt
       options.merge(:filename => eval_file, :line => line)
     end
   end
-  register 'sass', SassTemplate
+  register :sass, SassTemplate
 
   # Builder template implementation. See:
   # http://builder.rubyforge.org/
@@ -259,7 +259,7 @@ module Tilt
       data.to_str
     end
   end
-  register 'builder', BuilderTemplate
+  register :builder, BuilderTemplate
 
   # Liquid template implementation. See:
   # http://liquid.rubyforge.org/
@@ -279,7 +279,7 @@ module Tilt
       @engine.render(locals)
     end
   end
-  register 'liquid', LiquidTemplate
+  register :liquid, LiquidTemplate
 
   # Discount Markdown implementation.
   class RDiscountTemplate < Template
@@ -292,6 +292,5 @@ module Tilt
       @engine.to_html
     end
   end
-  register 'markdown', RDiscountTemplate
-
+  register :markdown, RDiscountTemplate
 end
